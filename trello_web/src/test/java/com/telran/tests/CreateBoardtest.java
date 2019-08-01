@@ -14,8 +14,8 @@ public class CreateBoardtest extends TestBase {
         clickOnPlusButtonOnHeader();
         selectCreateBoardFromDropdown();
         fillBoardCreationForm("MyBoard");
+        pause(2000);
         confirmBoardCreation();
-        clickOnHomeButtonOnHeader();
         pause(2000);
         addListToBoard();
         inputListTitle("MyFirstList");
@@ -27,42 +27,46 @@ public class CreateBoardtest extends TestBase {
         pause(5000);
         clickOnHomeButtonOnHeader();
         pause(10000);
-        //clickOnAccountButton();
-        //logOut();
+        clickOnAccountButton();
+        logOut();
     }
-
     private void selectCreateBoardFromDropdown() {
         click(By.xpath("//*[@data-test-id='header-create-board-button']"));
     }
     private void clickOnPlusButtonOnHeader() {
         click(By.cssSelector("[name=add]"));
     }
-
     private void fillBoardCreationForm(String title) {
         driver.findElement(By.xpath("//input[@placeholder='Add board title']")).sendKeys(title);
     }
     private void confirmBoardCreation() {
-    click(By.xpath("//*[@data-test-id='header-create-board-submit-button']"));
+    click(By.xpath("//button[@class='_3UeOvlU6B5KUnS uj9Ovoj4USRUQz _2MgouXHqRQDP_5']"));
     }
-   private void clickOnHomeButtonOnHeader() {
+    private void clickOnHomeButtonOnHeader() {
        click(By.xpath("//span[@name='house']"));
    }
-   private void addListToBoard() {
-        click(By.xpath("//span[@class='placeholder']"));
+    private void addListToBoard() {
+        click(By.xpath("//input[@placeholder='Enter list title...']"));
    }
-   private void inputListTitle(String listTitle) {
+    private void inputListTitle(String listTitle) {
         driver.findElement(By.xpath("//input[@placeholder='Enter list title...']")).sendKeys(listTitle);
    }
-   private void confirmListCreation() {
+    private void confirmListCreation() {
         click(By.xpath("//input[@class='primary mod-list-add-button js-save-edit']"));
    }
-   private void addCard() {
+    private void addCard() {
         click(By.xpath("//span[@class='js-add-a-card']"));
    }
-   private void inputCardName(String cardName) {
+    private void inputCardName(String cardName) {
         driver.findElement(By.xpath("//textarea[@placeholder='Enter a title for this card…']")).sendKeys(cardName);
    }
-   private void confirmCardCreation() {
+    private void confirmCardCreation() {
         click(By.xpath("//input[@class='primary confirm mod-compact js-add-card']"));
+   }
+   private void clickOnAccountButton() {
+        click(By.xpath("//span[@class='_24AWINHReYjNBf']"));
+   }
+   private void logOut() {
+        click(By.xpath("//span[contains(text(),'Log Out')]"));
    }
 }
