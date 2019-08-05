@@ -1,21 +1,24 @@
 package com.telran.tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
-
 public class LogInTest extends TestBase {
+    @BeforeMethod
+    public void preconditions() {
+        app.getSession().logout();
+    }
 
     @Test
     public void loginTest() throws InterruptedException {
-        clickOnLoginButton();
-        fillUserForm("tester28490@gmail.com", "Password234");
-        clickOnLoginButton();
-        pause(20000);
+        String currentUrl = app.driver.getCurrentUrl();
+        Assert.assertEquals(currentUrl, "https://trello.com/logged-out");
+        app.getSession().clickOnLoginButton();
+        app.getSession().fillUserForm("tester28490@gmail.com", "Password234");
+        app.getSession().confirmLoginButton();
+        app.getSession().pause(4000);
+
+        Assert.assertTrue(app.getSession().isUserLoggedIn());
     }
 }
