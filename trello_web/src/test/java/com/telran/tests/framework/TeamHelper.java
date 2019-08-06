@@ -28,4 +28,27 @@ public class TeamHelper extends HelperBase {
         WebElement teamsList = driver.findElement(By.cssSelector("nav.home-left-sidebar-container .js-react-root"));
         return teamsList.findElements(By.xpath(".//li")).size();
     }
+
+    public boolean isTeamPresent() {
+        return isElementPresent(By.cssSelector("nav.home-left-sidebar-container .js-react-root li"));
+    }
+
+    public void confirmTeamDeletion() {
+        click(By.cssSelector(".js-confirm"));
+    }
+
+    public void clickOnDeleteTeam() throws InterruptedException {
+        pause(5000);
+        click(By.cssSelector(".quiet-button"));
+    }
+
+    public void clickOnSettings() {
+        click(By.cssSelector("a .icon-gear"));
+    }
+
+    public void clickOnFirstTeam() throws InterruptedException {
+        pause(5000);
+        click(By.cssSelector("[data-test-id='home-team-tab-name']"));
+    }
+
 }

@@ -25,4 +25,5 @@ public class BoardHelper extends HelperBase {
     public int getBoardsCount() {
         return driver.findElements(By.xpath("//*[@class='icon-lg icon-member']/../../..//li")).size()-2;
     }
+
 }
