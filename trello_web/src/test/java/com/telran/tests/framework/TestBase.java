@@ -1,12 +1,11 @@
-package com.telran.tests;
+package com.telran.tests.framework;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class TestBase {
 
-   ApplicationManager app = new ApplicationManager();
+   public ApplicationManager app = new ApplicationManager();
 
     @BeforeClass
     public void setUp() throws InterruptedException{

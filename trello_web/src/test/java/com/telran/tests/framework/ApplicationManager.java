@@ -1,4 +1,4 @@
-package com.telran.tests;
+package com.telran.tests.framework;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -44,5 +44,9 @@ public class ApplicationManager {
 
     public HeaderPage getPage() {
         return page;
+    }
+
+    public String getUrl() {
+        return driver.getCurrentUrl();
     }
 }

@@ -1,5 +1,6 @@
-package com.telran.tests;
+package com.telran.tests.test;
 
+import com.telran.tests.framework.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
