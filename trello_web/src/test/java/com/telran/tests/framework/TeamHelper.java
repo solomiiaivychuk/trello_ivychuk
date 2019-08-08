@@ -1,5 +1,6 @@
 package com.telran.tests.framework;
 
+import com.telran.tests.model.Team;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,9 +16,9 @@ public class TeamHelper extends HelperBase {
         //new WebDriverWait(driver, 15).until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("")));
     }
 
-    public void fillTeamCreationForm(String teamName, String description) {
-        type(By.id("org-display-name"), teamName);
-        type(By.id("org-desc"), description);
+    public void fillTeamCreationForm(Team team) {
+        type(By.id("org-display-name"), team.getTeamName());
+        type(By.id("org-desc"), team.getTeamDescription());
     }
 
     public void selectCreateTeam() {
@@ -42,7 +43,7 @@ public class TeamHelper extends HelperBase {
         click(By.cssSelector(".quiet-button"));
     }
 
-    public void clickOnSettings() {
+    public void clickOnTeamSettings() {
         click(By.cssSelector("a .icon-gear"));
     }
 
@@ -51,4 +52,14 @@ public class TeamHelper extends HelperBase {
         click(By.cssSelector("[data-test-id='home-team-tab-name']"));
     }
 
+    public void cleanTeams() throws InterruptedException {
+        int count = getTeamsCount();
+        while (count > 3) {
+            clickOnFirstTeam();
+            clickOnTeamSettings();
+            clickOnDeleteTeam();
+            confirmTeamDeletion();
+            count = getTeamsCount();
+        }
+    }
 }

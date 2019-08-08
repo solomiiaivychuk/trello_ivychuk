@@ -17,6 +17,7 @@ public class LogInTest extends TestBase {
         app.getSession().clickOnLoginButton();
         app.getSession().fillUserForm("tester28490@gmail.com", "Password234");
         app.getSession().confirmLoginButton();
+        app.getPage().clickOnHomeButtonOnHeader();
         app.getSession().pause(4000);
 
         Assert.assertTrue(app.getSession().isUserLoggedIn());

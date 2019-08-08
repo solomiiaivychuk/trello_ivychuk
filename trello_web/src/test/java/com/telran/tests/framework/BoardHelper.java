@@ -1,5 +1,6 @@
 package com.telran.tests.framework;
 
+import com.telran.tests.model.Board;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -12,8 +13,8 @@ public class BoardHelper extends HelperBase {
         click(By.xpath("//*[@data-test-id='header-create-board-button']"));
     }
 
-    public void fillBoardCreationForm(String boardName) {
-        type(By.cssSelector("[data-test-id='header-create-board-title-input']"), boardName);
+    public void fillBoardCreationForm(Board board) {
+        type(By.cssSelector("[data-test-id='header-create-board-title-input']"), board.getBoardName());
         click(By.cssSelector("button.W6rMLOx8U0MrPx"));
         click(By.xpath("//nav[@class='SdlcRrTVPA8Y3K']//li[1]"));
     }
@@ -24,6 +25,34 @@ public class BoardHelper extends HelperBase {
 
     public int getBoardsCount() {
         return driver.findElements(By.xpath("//*[@class='icon-lg icon-member']/../../..//li")).size()-2;
+    }
+
+    public void clickOnBoardButtonOnHeader() {
+        click(By.xpath("//div[@class='all-boards']//div[2]//ul[1]//li[1]"));
+    }
+    public void clickOnFirstBoard() throws InterruptedException {
+        pause(2000);
+        click(By.xpath("//*[@class='icon-lg icon-member']/../../..//li"));
+    }
+
+    public void clickOnMoreButtonInBoardMenu() {
+        click(By.xpath("//a[@class='board-menu-navigation-item-link js-open-more']"));
+    }
+
+    public void chooseCloseBoard() {
+        click(By.cssSelector(".js-close-board"));
+    }
+
+    public void confirmClosingBoard() {
+        click(By.cssSelector("[class='js-confirm full negate']"));
+    }
+
+    public void permanentlyDeleteBoard() {
+        click(By.cssSelector("[class='quiet js-delete']"));
+    }
+
+    public void confirmPermanentBoardDeletion() {
+        click(By.cssSelector("[class='js-confirm full negate']"));
     }
 
 }

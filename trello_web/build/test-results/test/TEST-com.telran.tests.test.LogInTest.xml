@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.telran.tests.test.LogInTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-08-06T11:36:16" hostname="solomiia" time="14.16">
+  <properties/>
+  <testcase name="loginTest" classname="com.telran.tests.test.LogInTest" time="14.16"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
