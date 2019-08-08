@@ -4,11 +4,11 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class DeleteTeamFromSidebarTest extends TestBase {
+public class TeamDeletionFromSidebarTest extends TestBase {
     @BeforeMethod
     public void preconditions() throws InterruptedException {
         if(!app.getTeam().isTeamPresent()) {
-            new CreateTeamFromSidebarTest().createTeam();
+            new TeamCreationFromSidebarTest().createTeam();
         }
     }
 
@@ -16,6 +16,7 @@ public class DeleteTeamFromSidebarTest extends TestBase {
     public void deleteTeam() throws InterruptedException {
         int before = app.getTeam().getTeamsCount();
         app.getTeam().clickOnFirstTeam();
+        app.getSession().pause(1000);
         app.getTeam().clickOnTeamSettings();
         app.getTeam().clickOnDeleteTeam();
         app.getTeam().confirmTeamDeletion();

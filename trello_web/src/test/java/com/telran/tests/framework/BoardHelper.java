@@ -1,8 +1,11 @@
 package com.telran.tests.framework;
 
 import com.telran.tests.model.Board;
+import com.telran.tests.test.BoardDeletionFromHome;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import static com.telran.tests.test.TestBase.app;
 
 public class BoardHelper extends HelperBase {
     public BoardHelper(WebDriver driver) {
@@ -55,4 +58,15 @@ public class BoardHelper extends HelperBase {
         click(By.cssSelector("[class='js-confirm full negate']"));
     }
 
+    public void cleanBoards() throws InterruptedException {
+        int before = getBoardsCount();
+        while (before > 4) {
+            new BoardDeletionFromHome().deleteBoardFromHome();
+            before = getBoardsCount();
+
+        }
+    }
+    public boolean isBoardPresent() {
+        return isElementPresent((By.xpath("//*[@class='icon-lg icon-member']/../../..//li")));
+    }
 }

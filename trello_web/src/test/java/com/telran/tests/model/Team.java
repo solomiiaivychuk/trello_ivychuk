@@ -4,6 +4,13 @@ public class Team {
     private String teamName;
     private String teamDescription;
 
+    @Override
+    public String toString() {
+        return "Team : " +
+                "teamName : -" + teamName +
+                "-, teamDescription : -" + teamDescription + "-";
+    }
+
     public String getTeamName() {
         return teamName;
     }

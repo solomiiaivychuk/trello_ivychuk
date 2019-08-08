@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.telran.tests.test.CreateTeamFromSidebarTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-08-06T11:36:30" hostname="solomiia" time="16.346">
+<testsuite name="com.telran.tests.test.CreateTeamFromSidebarTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2019-08-08T08:45:02" hostname="solomiia" time="0.0">
   <properties/>
-  <testcase name="createTeam" classname="com.telran.tests.test.CreateTeamFromSidebarTest" time="16.346"/>
-  <system-out><![CDATA[4 : 5
-]]></system-out>
+  <testcase name="createTeam" classname="com.telran.tests.test.CreateTeamFromSidebarTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

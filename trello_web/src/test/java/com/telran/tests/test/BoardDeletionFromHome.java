@@ -1,12 +1,19 @@
 package com.telran.tests.test;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class DeleteBoardFromHome extends TestBase {
-
+public class BoardDeletionFromHome extends TestBase {
+    @BeforeMethod
+    public void preconditions() throws InterruptedException {
+        if (!app.getBoard().isBoardPresent()) {
+            new BoardCreationFromHeaderTest().boardCreationTestFromHeader();
+        }
+    }
     @Test
     public void deleteBoardFromHome() throws InterruptedException {
+
         int before = app.getBoard().getBoardsCount();
         app.getBoard().clickOnFirstBoard();
         app.getBoard().clickOnMoreButtonInBoardMenu();

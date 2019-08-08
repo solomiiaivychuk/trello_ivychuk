@@ -2,11 +2,12 @@ package com.telran.tests.test;
 
 import com.telran.tests.model.Team;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-public class CreateTeamFromSidebarTest extends TestBase {
+public class TeamCreationFromSidebarTest extends TestBase {
 
-    @Test
+    @Test(enabled = false)
     public void createTeam() throws InterruptedException {
         app.getSession().pause(5000);
         int before = app.getTeam().getTeamsCount();
@@ -22,10 +23,10 @@ public class CreateTeamFromSidebarTest extends TestBase {
         System.out.println(before + " : " + after);
         Assert.assertEquals(after, before+1);
     }
-/*
+
     @AfterClass
     public void postAction() throws InterruptedException {
         app.getTeam().cleanTeams();
     }
-    */
+
 }

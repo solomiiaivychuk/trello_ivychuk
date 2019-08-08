@@ -2,9 +2,10 @@ package com.telran.tests.test;
 
 import com.telran.tests.model.Board;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
-public class CreateBoardFromHeaderTest extends TestBase {
+public class BoardCreationFromHeaderTest extends TestBase {
 
     @Test
     public void boardCreationTestFromHeader() throws InterruptedException {
@@ -22,4 +23,11 @@ public class CreateBoardFromHeaderTest extends TestBase {
 
         Assert.assertEquals(afterCreation, beforeCreation + 1);
     }
+    /*
+    @AfterClass
+    public void postAction() throws InterruptedException {
+        app.getBoard().cleanBoards();
+    }
+    */
 }
+

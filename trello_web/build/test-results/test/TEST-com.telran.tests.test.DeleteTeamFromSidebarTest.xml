@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.telran.tests.test.DeleteTeamFromSidebarTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-08-06T11:36:59" hostname="solomiia" time="16.012">
+<testsuite name="com.telran.tests.test.DeleteTeamFromSidebarTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2019-08-08T08:45:02" hostname="solomiia" time="0.0">
   <properties/>
-  <testcase name="deleteTeam" classname="com.telran.tests.test.DeleteTeamFromSidebarTest" time="16.012"/>
-  <system-out><![CDATA[5 : 4
-]]></system-out>
+  <testcase name="deleteTeam" classname="com.telran.tests.test.DeleteTeamFromSidebarTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
