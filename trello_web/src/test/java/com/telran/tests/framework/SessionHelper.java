@@ -2,6 +2,8 @@ package com.telran.tests.framework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 public class SessionHelper extends HelperBase {
     public SessionHelper(WebDriver driver) {
@@ -16,7 +18,7 @@ public class SessionHelper extends HelperBase {
     }
     public void logout() {
         if(isUserLoggedIn()) {
-            clickOnAvatar();
+            clickOnAvatarOnHeader();
             clickLogOut();
         }
     }
@@ -41,8 +43,15 @@ public class SessionHelper extends HelperBase {
         click(By.xpath("//*[@data-test-id='header-member-menu-logout']"));
     }
 
-    public void clickOnAvatar() {
+    public void clickOnAvatarOnHeader() {
         click(By.cssSelector(".js-open-header-member-menu"));
+    }
 
-        }
+    public void clickOnProfileAndVisibility() {
+        click(By.cssSelector("[data-test-id='header-member-menu-profile']"));
+    }
+    public void moveToImage() {
+        WebElement img = driver.findElement(By.xpath("//button[@class='_2e97X7K2YRLv4Q']"));
+        new Actions(driver).moveToElement(img).pause(5).click().perform();
+    }
 }
