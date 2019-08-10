@@ -8,8 +8,8 @@ public class AvatarChangingTest extends TestBase {
     public void changeAvatar() throws InterruptedException {
     app.getSession().clickOnAvatarOnHeader();
     app.getSession().clickOnProfileAndVisibility();
-    app.getSession().pause(2000);
     app.getSession().moveToImage();
+    app.getSession().clickUploadPicture();
     app.getSession().pause(2000);
 }
 }

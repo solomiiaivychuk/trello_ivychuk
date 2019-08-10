@@ -54,4 +54,8 @@ public class SessionHelper extends HelperBase {
         WebElement img = driver.findElement(By.xpath("//button[@class='_2e97X7K2YRLv4Q']"));
         new Actions(driver).moveToElement(img).pause(5).click().perform();
     }
+    public void clickUploadPicture() {
+        click(By.cssSelector("[name='attachment']"));
+    }
+
 }
