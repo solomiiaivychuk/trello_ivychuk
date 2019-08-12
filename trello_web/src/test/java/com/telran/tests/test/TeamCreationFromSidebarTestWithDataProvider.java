@@ -13,7 +13,7 @@ import java.util.List;
 
 public class TeamCreationFromSidebarTestWithDataProvider extends TestBase {
 
-    @Test(dataProvider = "teams", dataProviderClass = DataProviders.class) //name of iterator
+    @Test (dataProvider = "teams", dataProviderClass = DataProviders.class) //name of iterator
     public void createTeam(Team team) throws InterruptedException {
         app.getSession().pause(5000);
         int before = app.getTeam().getTeamsCount();

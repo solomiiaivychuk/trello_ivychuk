@@ -1,12 +1,15 @@
 package com.telran.tests.test;
 
 import com.telran.tests.model.Board;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class BoardCreationFromHeaderTest extends TestBase {
 
+public class BoardCreationFromHeaderTest extends TestBase {
     @Test
     public void boardCreationTestFromHeader() throws InterruptedException {
         int beforeCreation = app.getBoard().getBoardsCount();

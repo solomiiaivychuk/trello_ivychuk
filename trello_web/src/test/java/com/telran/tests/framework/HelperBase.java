@@ -1,8 +1,11 @@
 package com.telran.tests.framework;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
+
+import java.io.File;
+import java.io.IOException;
+
 /*
 методи, що не прив'язані ні до яких класів
 системні
@@ -39,5 +42,16 @@ public class HelperBase {
 
     public void pause(int millis) throws InterruptedException {
         Thread.sleep(millis);
+    }
+
+    public void attach (By locator, File file) {
+        driver.findElement(locator).sendKeys(file.getAbsolutePath());
+    }
+
+    public void takeScreenshot() throws IOException {
+        File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = new File("src/test/Screenshots/Screenshot-" + System.currentTimeMillis()%100 + ".png");
+        Files.copy(tmp, screenshot);
+        System.out.println("Screenshot was taken - " + screenshot);
     }
 }
