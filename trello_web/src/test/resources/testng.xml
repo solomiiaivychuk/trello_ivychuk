@@ -7,7 +7,7 @@
             <class name="com.telran.tests.test.TeamCreationFromSidebarTest"/>
             <class name="com.telran.tests.test.BoardCreationFromHeaderTest"/>
             <class name="com.telran.tests.test.TeamDeletionFromSidebarTest"/>
-            <class name="com.telran.tests.test.BoardDeletionFromHome"/>
+
         </classes>
     </test>
  </suite>
