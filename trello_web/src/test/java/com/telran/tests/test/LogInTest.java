@@ -16,7 +16,7 @@ public class LogInTest extends TestBase {
         String currentUrl = app.getUrl();
         Assert.assertEquals(currentUrl, "https://trello.com/logged-out");
         app.getSession().clickOnLoginButton();
-        app.getSession().fillUserForm("tester28490@gmail.com", "Password234");
+        app.getSession().fillUserForm("tester28490@gmailcom", "Password234");
         app.getSession().confirmLoginButton();
         app.getPage().clickOnHomeButtonOnHeader();
         app.getSession().pause(4000);

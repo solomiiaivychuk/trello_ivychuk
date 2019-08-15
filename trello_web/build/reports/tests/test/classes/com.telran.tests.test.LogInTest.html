@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">2</div>
+<div class="counter">1</div>
 <p>tests</p>
 </div>
 </td>
@@ -35,13 +35,13 @@
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">1</div>
+<div class="counter">0</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">6.261s</div>
+<div class="counter">17.619s</div>
 <p>duration</p>
 </div>
 </td>
@@ -66,19 +66,25 @@
 <li>
 <a href="#tab1">Tests</a>
 </li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
 <div class="test">
-<a name="setUp"></a>
-<h3 class="failures">setUp</h3>
+<a name="loginTest"></a>
+<h3 class="failures">loginTest</h3>
 <span class="code">
-<pre>org.openqa.selenium.ElementClickInterceptedException: The command failed because the specified element is obscured.
+<pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;a [name='house']&quot;}
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'SOLOMIIA', ip: '192.168.31.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 44.18362.1.0, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}}
-Session ID: 9930872C-F269-419C-B657-DFB77F707F71
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.68 (420c9498db8ce..., userDataDir: C:\Users\solom\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63535}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 56c758ab9f620efd1451bfda973f807f
+*** Element info: {Using=css selector, value=a [name='house']}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -89,24 +95,34 @@ Session ID: 9930872C-F269-419C-B657-DFB77F707F71
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at com.telran.tests.framework.HelperBase.click(HelperBase.java:18)
-	at com.telran.tests.framework.HelperBase.type(HelperBase.java:22)
-	at com.telran.tests.framework.SessionHelper.fillUserForm(SessionHelper.java:29)
-	at com.telran.tests.framework.SessionHelper.login(SessionHelper.java:13)
-	at com.telran.tests.framework.ApplicationManager.init(ApplicationManager.java:43)
-	at com.telran.tests.test.TestBase.setUp(TestBase.java:14)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:105)
+	at com.sun.proxy.$Proxy11.findElement(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
+	at com.telran.tests.framework.HelperBase.click(HelperBase.java:21)
+	at com.telran.tests.framework.HeaderPage.clickOnHomeButtonOnHeader(HeaderPage.java:17)
+	at com.telran.tests.test.LogInTest.loginTest(LogInTest.java:21)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.lang.reflect.Method.invoke(Method.java:498)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:401)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
@@ -157,16 +173,51 @@ Session ID: 9930872C-F269-419C-B657-DFB77F707F71
 </tr>
 </thead>
 <tr>
-<td class="skipped">loginTest</td>
-<td class="skipped">-</td>
-<td class="skipped">ignored</td>
-</tr>
-<tr>
-<td class="failures">setUp</td>
-<td class="failures">6.261s</td>
+<td class="failures">loginTest</td>
+<td class="failures">17.619s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>14:57:26.592 [Test worker] INFO  com.telran.tests.test.TestBase - Start loginTest with parameters []
+14:57:26.593 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.cssSelector: .js-open-header-member-menu
+14:57:26.641 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Element By.cssSelector: .js-open-header-member-menu found
+14:57:26.642 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.cssSelector: .js-open-header-member-menu
+14:57:26.668 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Element By.cssSelector: .js-open-header-member-menu found
+14:57:26.799 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.xpath: //*[@data-test-id='header-member-menu-logout']
+14:57:26.837 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Element By.xpath: //*[@data-test-id='header-member-menu-logout'] found
+14:57:28.801 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.cssSelector: [href='/login']
+14:57:28.819 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Element By.cssSelector: [href='/login'] found
+14:57:30.221 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.id: user
+14:57:30.240 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Element By.id: user found
+14:57:30.328 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.id: user
+14:57:30.367 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Element By.id: user found
+14:57:30.413 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.id: user
+14:57:30.447 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Element By.id: user found
+14:57:30.614 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.id: password
+14:57:30.631 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Element By.id: password found
+14:57:30.712 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.id: password
+14:57:30.735 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Element By.id: password found
+14:57:30.772 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.id: password
+14:57:30.791 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Element By.id: password found
+14:57:30.896 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.id: login
+14:57:30.916 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Element By.id: login found
+14:57:35.999 [Test worker] INFO  c.t.t.f.ApplicationManager$MyListener - Start search element By.cssSelector: a [name='house']
+14:57:46.072 [Test worker] ERROR c.t.t.f.ApplicationManager$MyListener - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;a [name='house']&quot;}
+  (Session info: chrome=76.0.3809.100)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'SOLOMIIA', ip: '192.168.31.2', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_211'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.68 (420c9498db8ce..., userDataDir: C:\Users\solom\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:63535}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 56c758ab9f620efd1451bfda973f807f
+*** Element info: {Using=css selector, value=a [name='house']}
+Screenshot was taken - src\test\Screenshots\Screenshot-1565611066388.png
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">
@@ -176,7 +227,7 @@ Session ID: 9930872C-F269-419C-B657-DFB77F707F71
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.8</a> at Aug 8, 2019 11:45:03 AM</p>
+<a href="http://www.gradle.org">Gradle 4.8</a> at Aug 12, 2019 2:59:19 PM</p>
 </div>
 </div>
 </body>

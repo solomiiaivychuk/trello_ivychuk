@@ -4,10 +4,10 @@
     <test name="Regression" >
         <classes>
             <class name="com.telran.tests.test.LogInTest" />
-            <class name="com.telran.tests.test.CreateTeamFromSidebarTest"/>
-            <class name="com.telran.tests.test.CreateBoardFromHeaderTest"/>
-            <class name="com.telran.tests.test.DeleteTeamFromSidebarTest"/>
-            <class name="com.telran.tests.test.DeleteBoardFromHome"/>
+            <class name="com.telran.tests.test.TeamCreationFromSidebarTest"/>
+            <class name="com.telran.tests.test.BoardCreationFromHeaderTest"/>
+            <class name="com.telran.tests.test.TeamDeletionFromSidebarTest"/>
+            <class name="com.telran.tests.test.BoardDeletionFromHome"/>
         </classes>
     </test>
  </suite>

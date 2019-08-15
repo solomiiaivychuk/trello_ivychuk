@@ -2,6 +2,8 @@ package com.telran.tests.framework;
 
 import com.google.common.io.Files;
 import org.openqa.selenium.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +14,7 @@ import java.io.IOException;
  */
 public class HelperBase {
     WebDriver driver;
-
+    Logger logger = LoggerFactory.getLogger(HelperBase.class);
     public HelperBase(WebDriver driver) {
         this.driver = driver;
     }
@@ -50,8 +52,9 @@ public class HelperBase {
 
     public void takeScreenshot() throws IOException {
         File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        File screenshot = new File("src/test/Screenshots/Screenshot-" + System.currentTimeMillis()%100 + ".png");
+        File screenshot = new File("src/test/Screenshots/Screenshot-" + System.currentTimeMillis() + ".png");
         Files.copy(tmp, screenshot);
-        System.out.println("Screenshot was taken - " + screenshot);
+        logger.info("-----------------------------------------------");
+        logger.info("Screenshot was taken - " + screenshot.getName());
     }
 }
