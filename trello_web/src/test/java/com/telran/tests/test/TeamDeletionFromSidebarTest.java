@@ -20,7 +20,7 @@ public class TeamDeletionFromSidebarTest extends TestBase {
         app.getTeam().clickOnTeamSettings();
         app.getTeam().clickOnDeleteTeam();
         app.getTeam().confirmTeamDeletion();
-        app.getPage().clickOnHomeButtonOnHeader();
+        app.getHeader().clickOnHomeButtonOnHeader();
         int after = app.getTeam().getTeamsCount();
         System.out.println(before + " : " + after);
         Assert.assertEquals(after, before-1);

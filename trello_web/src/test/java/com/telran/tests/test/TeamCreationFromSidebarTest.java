@@ -2,7 +2,6 @@ package com.telran.tests.test;
 
 import com.telran.tests.model.Team;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 public class TeamCreationFromSidebarTest extends TestBase {
@@ -16,7 +15,7 @@ public class TeamCreationFromSidebarTest extends TestBase {
                 setTeamName("MyTeam"+System.currentTimeMillis()%100).
                 setTeamDescription("La-La-La"));
         app.getTeam().confirmTeamCreation();
-        app.getPage().clickOnHomeButtonOnHeader();
+        app.getHeader().clickOnHomeButtonOnHeader();
         app.getSession().pause(5000);
 
         int after = app.getTeam().getTeamsCount();

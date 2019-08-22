@@ -15,11 +15,11 @@ public class AvatarChangingTest extends TestBase {
 
     @Test
     public void changeAvatar() throws InterruptedException {
-    app.getSession().clickOnAvatarOnHeader();
-    app.getSession().clickOnProfileAndVisibility();
-    app.getSession().moveToImage();
-    app.getSession().clickAttachPicture(new File("src\\test\\resources\\racoon.jpg"));
-    app.getPage().clickOnHomeButtonOnHeader();
+    app.getHeader().clickOnAvatarOnHeader();
+    app.getProfile().clickOnProfileAndVisibility();
+    app.getProfile().moveToImage();
+    app.getProfile().clickAttachPicture(new File("src\\test\\resources\\racoon.jpg"));
+    app.getHeader().clickOnHomeButtonOnHeader();
     }
 
     @AfterMethod

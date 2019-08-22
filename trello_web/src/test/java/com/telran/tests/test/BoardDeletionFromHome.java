@@ -21,7 +21,7 @@ public class BoardDeletionFromHome extends TestBase {
         app.getBoard().confirmClosingBoard();
         app.getBoard().permanentlyDeleteBoard();
         app.getBoard().confirmPermanentBoardDeletion();
-        app.getPage().clickOnHomeButtonOnHeader();
+        app.getHeader().clickOnHomeButtonOnHeader();
         app.getSession().pause(5000);
         int after = app.getBoard().getBoardsCount();
 

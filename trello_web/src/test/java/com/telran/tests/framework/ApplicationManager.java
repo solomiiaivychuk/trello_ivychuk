@@ -1,6 +1,5 @@
 package com.telran.tests.framework;
 
-import com.telran.tests.test.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,10 +17,11 @@ import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
 
-    HeaderPage page;
+    HeaderPage header;
     TeamHelper team;
     BoardHelper board;
     SessionHelper session;
+    ProfileHelper profile;
     EventFiringWebDriver driver;
     public String browser;
 
@@ -68,10 +68,11 @@ public class ApplicationManager {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.navigate().to("https://trello.com");
 
-        page = new HeaderPage(driver);
+        header = new HeaderPage(driver);
         team = new TeamHelper(driver);
         board = new BoardHelper(driver);
         session = new SessionHelper(driver);
+        profile = new ProfileHelper(driver);
 
         driver.register(new MyListener());
         session.login("tester28490@gmail.com", "Password234");
@@ -93,8 +94,12 @@ public class ApplicationManager {
         return team;
     }
 
-    public HeaderPage getPage() {
-        return page;
+    public HeaderPage getHeader() {
+        return header;
+    }
+
+    public ProfileHelper getProfile() {
+        return profile;
     }
 
     public String getUrl() {

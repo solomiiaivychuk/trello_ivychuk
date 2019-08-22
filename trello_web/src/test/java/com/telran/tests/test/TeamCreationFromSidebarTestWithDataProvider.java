@@ -3,13 +3,7 @@ package com.telran.tests.test;
 import com.telran.tests.model.Team;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class TeamCreationFromSidebarTestWithDataProvider extends TestBase {
 
@@ -20,7 +14,7 @@ public class TeamCreationFromSidebarTestWithDataProvider extends TestBase {
         app.getTeam().selectCreateTeam();
         app.getTeam().fillTeamCreationForm(team);
         app.getTeam().confirmTeamCreation();
-        app.getPage().clickOnHomeButtonOnHeader();
+        app.getHeader().clickOnHomeButtonOnHeader();
         app.getSession().pause(5000);
 
         int after = app.getTeam().getTeamsCount();

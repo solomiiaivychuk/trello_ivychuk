@@ -2,6 +2,16 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/super-scheduler-mobile.iml" filepath="$PROJECT_DIR$/.idea/modules/super-scheduler-mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/super-scheduler-mobile_main.iml" filepath="$PROJECT_DIR$/.idea/modules/super-scheduler-mobile_main.iml" group="super-scheduler-mobile" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/super-scheduler-mobile_test.iml" filepath="$PROJECT_DIR$/.idea/modules/super-scheduler-mobile_test.iml" group="super-scheduler-mobile" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello-mobile.iml" filepath="$PROJECT_DIR$/.idea/modules/trello-mobile.iml" group="trello_web" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_mobile.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_mobile_main.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_mobile_main.iml" group="trello_mobile" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_mobile_new.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_mobile_new.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_mobile_new_main.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_mobile_new_main.iml" group="trello_mobile_new" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_mobile_new_test.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_mobile_new_test.iml" group="trello_mobile_new" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_mobile_test.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_mobile_test.iml" group="trello_mobile" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_web.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_web_main.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_web_main.iml" group="trello_web" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/trello_web_test.iml" filepath="$PROJECT_DIR$/.idea/modules/trello_web_test.iml" group="trello_web" />

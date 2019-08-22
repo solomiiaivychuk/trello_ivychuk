@@ -17,4 +17,7 @@ public class HeaderPage extends HelperBase {
         click(By.cssSelector("a [name='house']"));
         click(By.cssSelector("a [name='house']"));
    }
+    public void clickOnAvatarOnHeader() {
+        click(By.cssSelector(".js-open-header-member-menu"));
+    }
 }
